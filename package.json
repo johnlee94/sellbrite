@@ -20,6 +20,7 @@
     "jquery": "^3.0.0",
     "jsdom": "^8.1.0",
     "mocha": "^2.4.5",
+    "postcss-loader": "^2.1.0",
     "react-addons-test-utils": "^0.14.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
@@ -27,10 +28,13 @@
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
+    "postcss": "^6.0.17",
+    "postcss-cssnext": "^3.1.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "4.3.0",
     "react-router": "^2.0.1",
+    "react-toolbox": "^2.0.0-beta.12",
     "redux": "^3.0.4"
   }
 }
