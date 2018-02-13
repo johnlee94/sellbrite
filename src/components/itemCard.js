@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class ItemCard extends Component {
-  constructor(props) {
-    super(props);
+  renderList() {
+    return this.props.products.map((product) => {
+      return (
+        <div className="card" style={{width: '20rem'}}>
+    <img className="card-img-top" src={"../../images" + product.filename} alt="Card image cap"></img>
+    <div className="card-block">
+      <h4 className="card-title">{product.name}</h4>
+      <p className="card-text">{product.price}</p>
+      <a href="#" className="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+      );
+    });
   }
 
   render() {
     return (
-      <div className="card" style={{width: '20rem'}}>
-  <img className="card-img-top" src="..." alt="Card image cap"></img>
-  <div className="card-block">
-    <h4 className="card-title">Card title</h4>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-    )
+     <div>
+       {this.renderList()}
+     </div>
+   );
 
   }
 }
 
-export default ItemCard;
+function mapStateToProps(state) {
+  return {
+    products: state.products
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return 'x';
+}
+
+export default connect (mapStateToProps)(ItemCard);
