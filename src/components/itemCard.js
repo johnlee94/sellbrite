@@ -7,11 +7,11 @@ class ItemCard extends Component {
     return this.props.products.map((product) => {
       return (
         <div className="card" style={{width: '20rem'}}>
-    <img className="card-img-top" src={"../../images" + product.filename} alt="Card image cap"></img>
+    <img className="card-img-top" src={"../../images/" + product.filename} alt="Card image cap"></img>
     <div className="card-block">
       <h4 className="card-title">{product.name}</h4>
       <p className="card-text">{product.price}</p>
-      <a href="#" className="btn btn-primary">Go somewhere</a>
+      <a href="#" className="btn btn-primary">Add to Cart</a>
     </div>
   </div>
       );
