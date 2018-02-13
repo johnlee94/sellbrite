@@ -6,6 +6,7 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { compose } from 'recompose';
 
 
 const styles = {
@@ -18,15 +19,19 @@ const styles = {
 };
 
 class ItemCard2 extends Component {
-  // const { classes } = props;
+  // constructor(props) {
+  //   const { classes } = props;
+  //   super(props);
+  // }
   renderList() {
     return this.props.products.map((product) => {
+      let priceInDollars = product.price.toFixed(2)
+      let itemImage = "../../images/" + product.filename
       return (
         <div>
-          <Card className={classes.card}>
-            <CardMedia
-              className={classes.media}
-              image={"../../images/" + product.filename}
+          <Card style={{maxWidth: 345}}>
+            <CardMedia style={{height: 200}}
+              image={require('../../images/' + product.filename)}
               title="Contemplative Reptile"
             />
             <CardContent>
@@ -34,15 +39,12 @@ class ItemCard2 extends Component {
                 {product.name}
               </Typography>
               <Typography component="p">
-                {product.price}
+                ${priceInDollars}
               </Typography>
             </CardContent>
             <CardActions>
               <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Learn More
+                Add to Cart
               </Button>
             </CardActions>
           </Card>
@@ -69,5 +71,12 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect (mapStateToProps)(ItemCard2);
-// export default withStyles(styles)(ItemCard2);
+// export default compose(
+//   withStyles(styles, {
+//     name: 'ItemCard2',
+//   }),
+//   connect(),
+// )(mapStateToProps);
+
+export default connect (mapStateToProps)(withStyles(styles)(ItemCard2))
+// export default connect (mapStateToProps, withStyles(styles))(ItemCard2);
