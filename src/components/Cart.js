@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class Cart extends Component {
+  renderList() {
+    return this.props.selectedProducts.map((product) => {
+      return(
+        <div>{product.name}</div>
+      )
+    })
+  }
+
   render() {
-    if (!this.props.SelectedProducts) {
+    if (!this.props.selectedProducts) {
       return <div> Start Shopping </div>
     }
 
     return(
-      console.log(this.props.selectedProducts)
+      <div>{this.renderList()}</div>
     )
   }
-}
+  }
+
 
 function mapStateToProps(state) {
   return {
-    products: state.products,
     selectedProducts: state.selectedProducts
   };
 }

@@ -1,6 +1,7 @@
 export function addProduct(product) {
+  console.log(product)
   return {
-    type: 'PRODUCT_ADDED',
+    type: 'ADD_PRODUCT',
     payload: product
   };
 }

@@ -29,7 +29,9 @@ class ItemCard2 extends Component {
       let priceInDollars = product.price.toFixed(2)
       let itemImage = "../../images/" + product.filename
       return (
-        <div style={{width: 345, display: 'inline-block', margin: '10px 10px 10px 10px', padding: '0 5px 5px 0'}}>
+        <div style={{width: 345, display: 'inline-block', margin: '10px 10px 10px 10px', padding: '0 5px 5px 0'}}
+          key={product.filename}
+          >
           <Card style={{width: 345, display: 'inline-block'}}>
             <CardMedia style={{height: 200}}
               image={require('../../images/' + product.filename)}
@@ -46,7 +48,8 @@ class ItemCard2 extends Component {
             <CardActions>
               <Button size="small" color="primary" style={{margin: '0 auto'}}
                 key={product.name}
-                onClick={() => this.props.addProduct(product)}
+                onClick={() => this.props.addProduct(product)
+                }
                 >
                 Add to Cart
               </Button>
@@ -86,5 +89,5 @@ function mapDispatchToProps(dispatch) {
 //   connect(),
 // )(mapStateToProps);
 
-export default connect (mapStateToProps, mapDispatchToProps)(withStyles(styles)(ItemCard2))
+export default connect (mapStateToProps, mapDispatchToProps)(ItemCard2)
 // export default connect (mapStateToProps, withStyles(styles))(ItemCard2);

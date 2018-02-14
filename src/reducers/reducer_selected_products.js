@@ -1,17 +1,18 @@
-import { addProduct } from '../actions/add_product';
-
 const initialSelectedState = {
-  arr: []
+  SelectedProducts: []
 }
 
 export default function (state = initialSelectedState, action) {
+  console.log(initialSelectedState.SelectedProducts)
+  console.log(action.payload)
+  console.log(state.SelectedProducts)
   switch(action.type) {
-    case 'PRODUCT_ADDED':
+    case 'ADD_PRODUCT' :
       return {
         ...state,
-        arr: [...state.arr, action.product]
+        SelectedProducts: state.SelectedProducts.concat(action.payload)
       };
 
+      default: return state;
   }
-  return state;
 }
