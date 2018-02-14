@@ -4,11 +4,11 @@ import Button from 'material-ui/Button';
 
 class Cart extends Component {
   renderList() {
-    if (this.props.selectedProducts.arr.length === 0) {
+    if (this.props.selectedProducts.contents.length === 0) {
       return <div>Nothing in your Cart.. Start Shopping!</div>
     }
     let totalPrice = 0;
-    return this.props.selectedProducts.arr.map((product) => {
+    return this.props.selectedProducts.contents.map((product) => {
       totalPrice += product.price
       return(
         <div style={{marginBottom: '15px'}}>
@@ -29,7 +29,7 @@ class Cart extends Component {
 
   getTotal() {
     let totalPrice = 0;
-    this.props.selectedProducts.arr.map((product) => {
+    this.props.selectedProducts.contents.map((product) => {
       totalPrice += product.price
     })
     totalPrice = totalPrice.toFixed(2);
