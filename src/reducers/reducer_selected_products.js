@@ -1,16 +1,15 @@
 const initialSelectedState = {
-  SelectedProducts: []
+  arr: []
 }
 
 export default function (state = initialSelectedState, action) {
-  console.log(initialSelectedState.SelectedProducts)
+  console.log(initialSelectedState.arr)
   console.log(action.payload)
-  console.log(state.SelectedProducts)
   switch(action.type) {
     case 'ADD_PRODUCT' :
+    console.log(state.arr)
       return {
-        ...state,
-        SelectedProducts: state.SelectedProducts.concat(action.payload)
+        arr: state.arr.concat(action.payload)
       };
 
       default: return state;

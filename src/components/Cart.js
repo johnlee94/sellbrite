@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class Cart extends Component {
   renderList() {
-    return this.props.selectedProducts.map((product) => {
+    return this.props.selectedProducts.arr.map((product) => {
       return(
         <div>{product.name}</div>
       )
@@ -12,6 +12,7 @@ class Cart extends Component {
 
   render() {
     if (!this.props.selectedProducts) {
+      console.log(this.props.selectedProducts)
       return <div> Start Shopping </div>
     }
 

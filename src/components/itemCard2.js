@@ -28,6 +28,7 @@ class ItemCard2 extends Component {
     return this.props.products.map((product) => {
       let priceInDollars = product.price.toFixed(2)
       let itemImage = "../../images/" + product.filename
+      // console.log(this.props.products)
       return (
         <div style={{width: 345, display: 'inline-block', margin: '10px 10px 10px 10px', padding: '0 5px 5px 0'}}
           key={product.filename}
