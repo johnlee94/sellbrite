@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from 'material-ui/Button';
+import { bindActionCreators } from 'redux';
+import { removeProduct } from '../actions/remove_product'
 
 class Cart extends Component {
   renderList() {
@@ -21,6 +23,7 @@ class Cart extends Component {
             ${product.price}
           </p>
         </div>
+        <a style={{textAlign: 'center', float: 'left', color: 'black'}} onClick={() => this.props.removeProduct(product)}>X</a>
         <br/>
         </div>
       )
@@ -61,4 +64,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Cart);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ removeProduct: removeProduct}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
