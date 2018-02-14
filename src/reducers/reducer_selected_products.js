@@ -16,7 +16,7 @@ export default function (state = initialSelectedState, action) {
     case 'REMOVE_PRODUCT' :
       return {
         contents: state.contents.filter(item => item !== action.payload),
-        totalItems: state.contents.length + 1
+        totalItems: state.contents.length - 1
       }
 
       default: return state;
