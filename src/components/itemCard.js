@@ -6,7 +6,7 @@ class ItemCard extends Component {
   renderList() {
     return this.props.products.map((product) => {
       return (
-        <div className="card" style={{width: '20rem'}}>
+        <div className="card" style={{width: '20rem', display: 'inline-block'}}>
     <img className="card-img-top" src={require("../../images/" + product.filename)} alt="Card image cap"/>
     <div className="card-block">
       <h4 className="card-title">{product.name}</h4>
