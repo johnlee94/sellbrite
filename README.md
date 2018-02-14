@@ -9,6 +9,11 @@ I focused more of my efforts to make sure data was being passed correctly betwee
 
 Please let me know of things I could do to improve my code.
 
+### Installation
+
+```npm i```
+```npm start```
+
 Hosted on Heroku Server:
 https://polar-plains-49327.herokuapp.com/
 
