@@ -19,6 +19,8 @@ const styles = {
   },
 };
 
+//Google's material-ui
+
 class ItemCard2 extends Component {
   // constructor(props) {
   //   const { classes } = props;

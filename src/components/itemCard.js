@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+//Bootstrap
+
 class ItemCard extends Component {
   renderList() {
     return this.props.products.map((product) => {
